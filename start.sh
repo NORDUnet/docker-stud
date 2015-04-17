@@ -21,4 +21,4 @@ if [ "x${CORES}" = "x" ]; then
    CORES="1"
 fi
 
-/usr/local/bin/stud --write-xff -q -f '*,443' -b "${HTTP_IP},${HTTP_PORT}" -n ${CORES} `find /etc/ssl/private/ -type f -a -name \*.pem`
+/usr/local/bin/stud --write-xff -q -f '*,443' -b "${HTTP_IP},${HTTP_PORT}" -c ${CIPHERS} -n ${CORES} `find /etc/ssl/private/ -type f -a -name \*.pem`
